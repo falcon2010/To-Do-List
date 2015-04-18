@@ -17,10 +17,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.mohamedibrahim.ToDoList.BaseProvider.DATABASE;
+import com.mohamedibrahim.ToDoList.NewItemFragment.onSearchRequestListener;
 import com.mohamedibrahim.widget.MyWidget;
 
 public class MainActivity extends FragmentActivity implements
-		NewItemFragment.OnNewItemAddedListener,
+		NewItemFragment.OnNewItemAddedListener, onSearchRequestListener,
 		LoaderManager.LoaderCallbacks<Cursor> {
 
 	private ToDoItemAdapter adapter;
@@ -97,6 +98,12 @@ public class MainActivity extends FragmentActivity implements
 	public void onLoaderReset(Loader<Cursor> loader) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void onSearchRequest() {
+
+		startActivity(new Intent(this, DatabaseSkeletonSearchActivity.class));
 	}
 
 }

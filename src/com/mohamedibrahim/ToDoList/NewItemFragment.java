@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 public class NewItemFragment extends Fragment {
 
 	private OnNewItemAddedListener onNewItemAddedListener;
-	//private onSearchRequestListener onSearchRequestListener ;
+	private onSearchRequestListener onSearchRequestListener ;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,7 +43,7 @@ public class NewItemFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 			
-				//onSearchRequestListener.onSearchRequest();	
+			 onSearchRequestListener.onSearchRequest();	
 			}
 		});
 		
@@ -59,7 +59,7 @@ public class NewItemFragment extends Fragment {
 		try {
 
 			onNewItemAddedListener = (OnNewItemAddedListener) activity;
-		//	onSearchRequestListener= (onSearchRequestListener) activity;
+			onSearchRequestListener= (onSearchRequestListener) activity;
 
 		} catch (ClassCastException e) {
 			throw new ClassCastException(activity.toString()

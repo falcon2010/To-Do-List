@@ -33,4 +33,10 @@ public class ToDoItem {
 		return "(" + dateString + ") " + task;
 	}
 
+	public CharSequence getFormateCreatedDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
+		String dateString = sdf.format(getCreated());
+		return dateString;
+	}
+
 }
